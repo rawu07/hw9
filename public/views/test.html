@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEKO</title>
+  <link href="../style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <div id="content">
+    <div id="top">
+      <div id="toptitle">
+        <strong><p>今天你的貓掉毛了嗎？</p></strong>
+        <p style="font-size:20px;">貓咪掉毛何所似？ 未若柳絮因風起。</p>
+      </div>
+      <img id="topneco" src="../topneco.JPG" alt="">
+    </div> <!--top-->
+    <div style="margin-bottom:50px;">
+      <form action="">
+        <div style="font-size:1.5em;color:rgb(100, 100, 100);height:60px;margin-top:10px;">請選擇一種貓咳出來的毛球</div>
+        <div id="color">
+          <div class="mw">
+            <img class="mi" src="../black.jpg" alt="">
+            <input type="radio" name="meow" checked="checked">
+          </div>
+          <div class="mw">
+            <img class="mi" src="../purple.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+          <div class="mw">
+            <img class="mi" src="../stone1.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+          <div class="mw">
+            <img class="mi" src="../stone2.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+
+          <div class="mw">
+            <img class="mi" src="../white.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+          <div class="mw">
+            <img class="mi" src="../wood.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+          <div class="mw">
+            <img class="mi" src="../yellow.jpg" alt="">
+            <input type="radio" name="meow">
+          </div>
+        </div>
+          <!-- 回應的地方 -->
+        <p>說說你家柳絮吧～<input type="text" style="width:230px;" name="nameid"></p>
+        <p><textarea rows="10" cols="50" name="re"></textarea></p>
+        <input type="submit" value="☆" style="width:375px;">
+      </form>
+    </div>
+    <div id="re" style="margin-bottom:50px;background-color:rgb(200, 180, 180);height:200px;">
+      <% if (userinfos.length) { %>
+        <div>
+          <% userinfos.forEach(function(userinfo){ %>
+            <div style="margin-top:30px;width:375px;background-color:rgba(255,255,255,0.5);margin:auto;"><h4><%= userinfo['nameid'] %></h4></div>
+            <div style="margin-top:5px;width:375px;background-color:rgba(255,255,255,0.5);margin:auto;"><%= userinfo['re'] %></div>
+          <% }) %>
+        </div>
+      <% } %>
+    </div> <!--re-->
+  </div> <!--content-->
+  <div id="footer">Copyright © 2016</div>
+</body>
+</html>
